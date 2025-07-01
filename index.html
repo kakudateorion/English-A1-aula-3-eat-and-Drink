@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulário de Café da Manhã</title>
+    <style>
+        /* Estilos básicos para a página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .vocabulary-item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block; /* Para as caixas ficarem lado a lado */
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer; /* Indica que é clicável */
+        }
+        .vocabulary-item img {
+            max-width: 150px; /* Tamanho máximo da imagem */
+            height: auto;
+            display: block; /* Para a imagem não ter espaço extra abaixo */
+            margin: 0 auto 10px auto; /* Centraliza a imagem e dá espaço */
+        }
+        .word {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: capitalize; /* Primeira letra maiúscula */
+        }
+        h1 {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Aprenda Palavras em Inglês para o Café da Manhã</h1>
+
+    <p>Clique nas imagens para ouvir as palavras.</p>
+
+    <div class="vocabulary-item" onclick="playAudio('audioTea')">
+        <img src="tea.png" alt="Tea">
+        <div class="word">tea</div>
+        <audio id="audioTea" src="tea.mp3" preload="auto"></audio>
+    </div>
+
+    <div class="vocabulary-item" onclick="playAudio('audioBoiledEgg')">
+        <img src="boiled_egg.png" alt="Boiled Egg">
+        <div class="word">boiled egg</div>
+        <audio id="audioBoiledEgg" src="boiled_egg.mp3" preload="auto"></audio>
+    </div>
+
+    <script>
+        function playAudio(audioId) {
+            const audio = document.getElementById(audioId);
+            audio.currentTime = 0; // Reinicia o áudio se for clicado novamente
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
